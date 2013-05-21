@@ -1,9 +1,9 @@
 " Vim syntax file
 " Language: resolver configuration file
 " Maintaner: Radu Dineiu <radu.dineiu@gmail.com>
-" URL: http://stuf.ro/vim/resolv.vim
-" Last Change: 2006 May 12
-" Version: 0.2
+" URL: https://raw.github.com/rid9/vim-resolv/master/resolv.vim
+" Last Change: 2013 May 21
+" Version: 1.0
 "
 " Credits:
 "   David Necas (Yeti) <yeti@physics.muni.cz>
