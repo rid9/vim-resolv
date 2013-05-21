@@ -1,6 +1,6 @@
 " Vim syntax file
 " Language: resolver configuration file
-" Maintaner: Radu Dineiu <radu.dineiu@gmail.com>
+" Maintainer: Radu Dineiu <radu.dineiu@gmail.com>
 " URL: https://raw.github.com/rid9/vim-resolv/master/resolv.vim
 " Last Change: 2013 May 21
 " Version: 1.0
