@@ -36,15 +36,15 @@ syn match resolvHostname contained /\w\{-}\.[-0-9A-Za-z_\.]*/
 
 " Particular
 syn match resolvIPNameserver contained /\%(\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\s\|$\)\)\+/ contains=@resolvIPCluster
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{6}\(\x\{1,4}:\x\{1,4}\)\>/
-syn match resolvIPNameserver contained /\s\@<=::\(\(\x\{1,4}:\)\{,6}\x\{1,4}\)\>/
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{1}:\(\(\x\{1,4}:\)\{,5}\x\{1,4}\)\>/
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{2}:\(\(\x\{1,4}:\)\{,4}\x\{1,4}\)\>/
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{3}:\(\(\x\{1,4}:\)\{,3}\x\{1,4}\)\>/
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{4}:\(\(\x\{1,4}:\)\{,2}\x\{1,4}\)\>/
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{5}:\(\(\x\{1,4}:\)\{,1}\x\{1,4}\)\>/
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{6}:\x\{1,4}\>/
-syn match resolvIPNameserver contained /\<\(\x\{1,4}:\)\{1,7}:\(\s\|;\|$\)\@=/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{6}\%(\x\{1,4}:\x\{1,4}\)\>/
+syn match resolvIPNameserver contained /\s\@<=::\%(\x\{1,4}:\)\{,6}\x\{1,4}\>/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{1}:\%(\x\{1,4}:\)\{,5}\x\{1,4}\>/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{2}:\%(\x\{1,4}:\)\{,4}\x\{1,4}\>/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{3}:\%(\x\{1,4}:\)\{,3}\x\{1,4}\>/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{4}:\%(\x\{1,4}:\)\{,2}\x\{1,4}\>/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{5}:\%(\x\{1,4}:\)\{,1}\x\{1,4}\>/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{6}:\x\{1,4}\>/
+syn match resolvIPNameserver contained /\<\%(\x\{1,4}:\)\{1,7}:\%(\s\|;\|$\)\@=/
 syn match resolvHostnameSearch contained /\%(\%([-0-9A-Za-z_]\+\.\)*[-0-9A-Za-z_]\+\.\?\%(\s\|$\)\)\+/
 syn match resolvIPNetmaskSortList contained /\%(\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\%(\%(\d\{1,4}\.\)\{,3}\d\{1,4}\)\)\?\%(\s\|$\)\)\+/ contains=resolvOperator,@resolvIPCluster
 
