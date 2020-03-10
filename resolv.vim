@@ -3,7 +3,7 @@
 " Maintainer: Radu Dineiu <radu.dineiu@gmail.com>
 " URL: https://raw.github.com/rid9/vim-resolv/master/resolv.vim
 " Last Change: 2020 Mar 10
-" Version: 1.3
+" Version: 1.4
 "
 " Credits:
 "   David Necas (Yeti) <yeti@physics.muni.cz>
@@ -11,6 +11,7 @@
 "   DJ Lucas <dj@linuxfromscratch.org>
 "
 " Changelog:
+"   - 1.4: Added IPv6 support for sortlist.
 "   - 1.3: Added IPv6 support for IPv4 dot-decimal notation.
 "   - 1.2: Added new options.
 "   - 1.1: Added IPv6 support.
@@ -59,6 +60,22 @@ syn match resolvHostnameSearch contained /\%(\%([-0-9A-Za-z_]\+\.\)*[-0-9A-Za-z_
 
 " Sortlist IPv4
 syn match resolvIPNetmaskSortList contained /\%(\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\%(\%(\d\{1,4}\.\)\{,3}\d\{1,4}\)\)\?\%(\s\|$\)\)\+/ contains=resolvOperator,@resolvIPCluster
+
+" Sortlist IPv6
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{6}\%(\x\{1,4}:\x\{1,4}\)\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\s\@<=::\%(\x\{1,4}:\)\{,6}\x\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\s\@<=::\%(\x\{1,4}:\)\{,5}\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{1}:\%(\x\{1,4}:\)\{,5}\x\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{1}:\%(\x\{1,4}:\)\{,4}\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{2}:\%(\x\{1,4}:\)\{,4}\x\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{2}:\%(\x\{1,4}:\)\{,3}\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{3}:\%(\x\{1,4}:\)\{,3}\x\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{3}:\%(\x\{1,4}:\)\{,2}\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{4}:\%(\x\{1,4}:\)\{,2}\x\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{4}:\%(\x\{1,4}:\)\{,1}\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{5}:\%(\d\{1,4}\.\)\{3}\d\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{6}:\x\{1,4}\%(\/\d\{1,3}\)\?\>/
+syn match resolvIPNetmaskSortList contained /\<\%(\x\{1,4}:\)\{1,7}:\%(\s\|;\|$\)\@=\%(\/\d\{1,3}\)\?/
 
 " Identifiers
 syn match resolvNameserver /^\s*nameserver\>/ nextgroup=resolvIPNameserver skipwhite
