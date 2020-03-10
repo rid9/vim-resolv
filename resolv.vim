@@ -3,12 +3,16 @@
 " Maintainer: Radu Dineiu <radu.dineiu@gmail.com>
 " URL: https://raw.github.com/rid9/vim-resolv/master/resolv.vim
 " Last Change: 2020 Mar 10
-" Version: 1.1
+" Version: 1.2
 "
 " Credits:
 "   David Necas (Yeti) <yeti@physics.muni.cz>
 "   Stefano Zacchiroli <zack@debian.org>
 "   DJ Lucas <dj@linuxfromscratch.org>
+"
+" Changelog:
+"   - 1.2: Added new options.
+"   - 1.1: Added IPv6 support.
 
 " quit when a syntax file was already loaded
 if exists("b:current_syntax")
@@ -53,7 +57,7 @@ syn match resolvSortList /^\s*sortlist\>/ nextgroup=resolvIPNetmaskSortList skip
 syn match resolvOptions /^\s*options\>/ nextgroup=resolvOption skipwhite
 
 " Options
-syn match resolvOption /\<\%(debug\|no_tld_query\|rotate\|no-check-names\|inet6\)\>/ contained nextgroup=resolvOption skipwhite
+syn match resolvOption /\<\%(debug\|no_tld_query\|no-tld-query\|rotate\|no-check-names\|inet6\|ip6-bytestring\|\%(no-\)\?ip6-dotint\|edns0\|single-request\%(-reopen\)\?\|use-vc\)\>/ contained nextgroup=resolvOption skipwhite
 syn match resolvOption /\<\%(ndots\|timeout\|attempts\):\d\+\>/ contained contains=resolvOperator nextgroup=resolvOption skipwhite
 
 " Additional errors
